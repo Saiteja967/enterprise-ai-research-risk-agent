@@ -1,0 +1,605 @@
+{
+  "companies": [
+    {
+      "id": "ABC",
+      "name": "Aster Bridge Components",
+      "sector": "Industrials"
+    },
+    {
+      "id": "KST",
+      "name": "Kestrel Freight",
+      "sector": "Logistics"
+    },
+    {
+      "id": "VLA",
+      "name": "Vela Materials",
+      "sector": "Materials"
+    },
+    {
+      "id": "NTH",
+      "name": "Northline Energy",
+      "sector": "Energy"
+    },
+    {
+      "id": "ORA",
+      "name": "Oriole Systems",
+      "sector": "Technology"
+    },
+    {
+      "id": "HBR",
+      "name": "Harborline Foods",
+      "sector": "Consumer goods"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "T-ABC-1-0",
+      "company": "ABC",
+      "period": "2026-01",
+      "amount": 282000,
+      "overdue": 25380
+    },
+    {
+      "id": "T-ABC-1-1",
+      "company": "ABC",
+      "period": "2026-01",
+      "amount": 299000,
+      "overdue": 26910
+    },
+    {
+      "id": "T-ABC-2-0",
+      "company": "ABC",
+      "period": "2026-02",
+      "amount": 297000,
+      "overdue": 35937
+    },
+    {
+      "id": "T-ABC-2-1",
+      "company": "ABC",
+      "period": "2026-02",
+      "amount": 314000,
+      "overdue": 37994
+    },
+    {
+      "id": "T-ABC-3-0",
+      "company": "ABC",
+      "period": "2026-03",
+      "amount": 312000,
+      "overdue": 47424
+    },
+    {
+      "id": "T-ABC-3-1",
+      "company": "ABC",
+      "period": "2026-03",
+      "amount": 305000,
+      "overdue": 46360
+    },
+    {
+      "id": "T-ABC-4-0",
+      "company": "ABC",
+      "period": "2026-04",
+      "amount": 303000,
+      "overdue": 55449
+    },
+    {
+      "id": "T-ABC-4-1",
+      "company": "ABC",
+      "period": "2026-04",
+      "amount": 320000,
+      "overdue": 58560
+    },
+    {
+      "id": "T-ABC-5-0",
+      "company": "ABC",
+      "period": "2026-05",
+      "amount": 318000,
+      "overdue": 68052
+    },
+    {
+      "id": "T-ABC-5-1",
+      "company": "ABC",
+      "period": "2026-05",
+      "amount": 335000,
+      "overdue": 71690
+    },
+    {
+      "id": "T-ABC-6-0",
+      "company": "ABC",
+      "period": "2026-06",
+      "amount": 333000,
+      "overdue": 81585
+    },
+    {
+      "id": "T-ABC-6-1",
+      "company": "ABC",
+      "period": "2026-06",
+      "amount": 326000,
+      "overdue": 79870
+    },
+    {
+      "id": "T-KST-1-0",
+      "company": "KST",
+      "period": "2026-01",
+      "amount": 175000,
+      "overdue": 14000
+    },
+    {
+      "id": "T-KST-1-1",
+      "company": "KST",
+      "period": "2026-01",
+      "amount": 192000,
+      "overdue": 15360
+    },
+    {
+      "id": "T-KST-2-0",
+      "company": "KST",
+      "period": "2026-02",
+      "amount": 190000,
+      "overdue": 17480
+    },
+    {
+      "id": "T-KST-2-1",
+      "company": "KST",
+      "period": "2026-02",
+      "amount": 183000,
+      "overdue": 16836
+    },
+    {
+      "id": "T-KST-3-0",
+      "company": "KST",
+      "period": "2026-03",
+      "amount": 181000,
+      "overdue": 18824
+    },
+    {
+      "id": "T-KST-3-1",
+      "company": "KST",
+      "period": "2026-03",
+      "amount": 198000,
+      "overdue": 20592
+    },
+    {
+      "id": "T-KST-4-0",
+      "company": "KST",
+      "period": "2026-04",
+      "amount": 196000,
+      "overdue": 22736
+    },
+    {
+      "id": "T-KST-4-1",
+      "company": "KST",
+      "period": "2026-04",
+      "amount": 213000,
+      "overdue": 24708
+    },
+    {
+      "id": "T-KST-5-0",
+      "company": "KST",
+      "period": "2026-05",
+      "amount": 211000,
+      "overdue": 27008
+    },
+    {
+      "id": "T-KST-5-1",
+      "company": "KST",
+      "period": "2026-05",
+      "amount": 204000,
+      "overdue": 26112
+    },
+    {
+      "id": "T-KST-6-0",
+      "company": "KST",
+      "period": "2026-06",
+      "amount": 202000,
+      "overdue": 28280
+    },
+    {
+      "id": "T-KST-6-1",
+      "company": "KST",
+      "period": "2026-06",
+      "amount": 219000,
+      "overdue": 30660
+    },
+    {
+      "id": "T-VLA-1-0",
+      "company": "VLA",
+      "period": "2026-01",
+      "amount": 209000,
+      "overdue": 10868
+    },
+    {
+      "id": "T-VLA-1-1",
+      "company": "VLA",
+      "period": "2026-01",
+      "amount": 202000,
+      "overdue": 10504
+    },
+    {
+      "id": "T-VLA-2-0",
+      "company": "VLA",
+      "period": "2026-02",
+      "amount": 200000,
+      "overdue": 11200
+    },
+    {
+      "id": "T-VLA-2-1",
+      "company": "VLA",
+      "period": "2026-02",
+      "amount": 217000,
+      "overdue": 12152
+    },
+    {
+      "id": "T-VLA-3-0",
+      "company": "VLA",
+      "period": "2026-03",
+      "amount": 215000,
+      "overdue": 12900
+    },
+    {
+      "id": "T-VLA-3-1",
+      "company": "VLA",
+      "period": "2026-03",
+      "amount": 232000,
+      "overdue": 13920
+    },
+    {
+      "id": "T-VLA-4-0",
+      "company": "VLA",
+      "period": "2026-04",
+      "amount": 230000,
+      "overdue": 14720
+    },
+    {
+      "id": "T-VLA-4-1",
+      "company": "VLA",
+      "period": "2026-04",
+      "amount": 223000,
+      "overdue": 14272
+    },
+    {
+      "id": "T-VLA-5-0",
+      "company": "VLA",
+      "period": "2026-05",
+      "amount": 221000,
+      "overdue": 15028
+    },
+    {
+      "id": "T-VLA-5-1",
+      "company": "VLA",
+      "period": "2026-05",
+      "amount": 238000,
+      "overdue": 16184
+    },
+    {
+      "id": "T-VLA-6-0",
+      "company": "VLA",
+      "period": "2026-06",
+      "amount": 236000,
+      "overdue": 16992
+    },
+    {
+      "id": "T-VLA-6-1",
+      "company": "VLA",
+      "period": "2026-06",
+      "amount": 253000,
+      "overdue": 18216
+    },
+    {
+      "id": "T-NTH-1-0",
+      "company": "NTH",
+      "period": "2026-01",
+      "amount": 225000,
+      "overdue": 14625
+    },
+    {
+      "id": "T-NTH-1-1",
+      "company": "NTH",
+      "period": "2026-01",
+      "amount": 242000,
+      "overdue": 15730
+    },
+    {
+      "id": "T-NTH-2-0",
+      "company": "NTH",
+      "period": "2026-02",
+      "amount": 240000,
+      "overdue": 16560
+    },
+    {
+      "id": "T-NTH-2-1",
+      "company": "NTH",
+      "period": "2026-02",
+      "amount": 257000,
+      "overdue": 17733
+    },
+    {
+      "id": "T-NTH-3-0",
+      "company": "NTH",
+      "period": "2026-03",
+      "amount": 255000,
+      "overdue": 18615
+    },
+    {
+      "id": "T-NTH-3-1",
+      "company": "NTH",
+      "period": "2026-03",
+      "amount": 248000,
+      "overdue": 18104
+    },
+    {
+      "id": "T-NTH-4-0",
+      "company": "NTH",
+      "period": "2026-04",
+      "amount": 246000,
+      "overdue": 18942
+    },
+    {
+      "id": "T-NTH-4-1",
+      "company": "NTH",
+      "period": "2026-04",
+      "amount": 263000,
+      "overdue": 20251
+    },
+    {
+      "id": "T-NTH-5-0",
+      "company": "NTH",
+      "period": "2026-05",
+      "amount": 261000,
+      "overdue": 21141
+    },
+    {
+      "id": "T-NTH-5-1",
+      "company": "NTH",
+      "period": "2026-05",
+      "amount": 278000,
+      "overdue": 22518
+    },
+    {
+      "id": "T-NTH-6-0",
+      "company": "NTH",
+      "period": "2026-06",
+      "amount": 276000,
+      "overdue": 23460
+    },
+    {
+      "id": "T-NTH-6-1",
+      "company": "NTH",
+      "period": "2026-06",
+      "amount": 269000,
+      "overdue": 22865
+    },
+    {
+      "id": "T-ORA-1-0",
+      "company": "ORA",
+      "period": "2026-01",
+      "amount": 153000,
+      "overdue": 4590
+    },
+    {
+      "id": "T-ORA-1-1",
+      "company": "ORA",
+      "period": "2026-01",
+      "amount": 170000,
+      "overdue": 5100
+    },
+    {
+      "id": "T-ORA-2-0",
+      "company": "ORA",
+      "period": "2026-02",
+      "amount": 168000,
+      "overdue": 5712
+    },
+    {
+      "id": "T-ORA-2-1",
+      "company": "ORA",
+      "period": "2026-02",
+      "amount": 161000,
+      "overdue": 5474
+    },
+    {
+      "id": "T-ORA-3-0",
+      "company": "ORA",
+      "period": "2026-03",
+      "amount": 159000,
+      "overdue": 6042
+    },
+    {
+      "id": "T-ORA-3-1",
+      "company": "ORA",
+      "period": "2026-03",
+      "amount": 176000,
+      "overdue": 6688
+    },
+    {
+      "id": "T-ORA-4-0",
+      "company": "ORA",
+      "period": "2026-04",
+      "amount": 174000,
+      "overdue": 7308
+    },
+    {
+      "id": "T-ORA-4-1",
+      "company": "ORA",
+      "period": "2026-04",
+      "amount": 191000,
+      "overdue": 8022
+    },
+    {
+      "id": "T-ORA-5-0",
+      "company": "ORA",
+      "period": "2026-05",
+      "amount": 189000,
+      "overdue": 8694
+    },
+    {
+      "id": "T-ORA-5-1",
+      "company": "ORA",
+      "period": "2026-05",
+      "amount": 182000,
+      "overdue": 8372
+    },
+    {
+      "id": "T-ORA-6-0",
+      "company": "ORA",
+      "period": "2026-06",
+      "amount": 180000,
+      "overdue": 9000
+    },
+    {
+      "id": "T-ORA-6-1",
+      "company": "ORA",
+      "period": "2026-06",
+      "amount": 197000,
+      "overdue": 9850
+    },
+    {
+      "id": "T-HBR-1-0",
+      "company": "HBR",
+      "period": "2026-01",
+      "amount": 137000,
+      "overdue": 3425
+    },
+    {
+      "id": "T-HBR-1-1",
+      "company": "HBR",
+      "period": "2026-01",
+      "amount": 130000,
+      "overdue": 3250
+    },
+    {
+      "id": "T-HBR-2-0",
+      "company": "HBR",
+      "period": "2026-02",
+      "amount": 128000,
+      "overdue": 3712
+    },
+    {
+      "id": "T-HBR-2-1",
+      "company": "HBR",
+      "period": "2026-02",
+      "amount": 145000,
+      "overdue": 4205
+    },
+    {
+      "id": "T-HBR-3-0",
+      "company": "HBR",
+      "period": "2026-03",
+      "amount": 143000,
+      "overdue": 4719
+    },
+    {
+      "id": "T-HBR-3-1",
+      "company": "HBR",
+      "period": "2026-03",
+      "amount": 160000,
+      "overdue": 5280
+    },
+    {
+      "id": "T-HBR-4-0",
+      "company": "HBR",
+      "period": "2026-04",
+      "amount": 158000,
+      "overdue": 5846
+    },
+    {
+      "id": "T-HBR-4-1",
+      "company": "HBR",
+      "period": "2026-04",
+      "amount": 151000,
+      "overdue": 5587
+    },
+    {
+      "id": "T-HBR-5-0",
+      "company": "HBR",
+      "period": "2026-05",
+      "amount": 149000,
+      "overdue": 6109
+    },
+    {
+      "id": "T-HBR-5-1",
+      "company": "HBR",
+      "period": "2026-05",
+      "amount": 166000,
+      "overdue": 6806
+    },
+    {
+      "id": "T-HBR-6-0",
+      "company": "HBR",
+      "period": "2026-06",
+      "amount": 164000,
+      "overdue": 7380
+    },
+    {
+      "id": "T-HBR-6-1",
+      "company": "HBR",
+      "period": "2026-06",
+      "amount": 181000,
+      "overdue": 8145
+    }
+  ],
+  "alerts": [
+    {
+      "id": "AL-1048",
+      "company": "ABC",
+      "title": "Receivables aging",
+      "severity": "high",
+      "detail": "Two distributors requested revised settlement dates. The June ledger shows a higher overdue balance.",
+      "status": "open",
+      "opened": "2026-06-28"
+    },
+    {
+      "id": "AL-1047",
+      "company": "KST",
+      "title": "Carrier concentration",
+      "severity": "high",
+      "detail": "A single carrier handles most contracted routes. The contingency review is still open.",
+      "status": "open",
+      "opened": "2026-06-26"
+    },
+    {
+      "id": "AL-1046",
+      "company": "VLA",
+      "title": "Inventory exposure",
+      "severity": "medium",
+      "detail": "Longer storage periods have extended the inventory review window.",
+      "status": "open",
+      "opened": "2026-06-23"
+    },
+    {
+      "id": "AL-1045",
+      "company": "ABC",
+      "title": "Covenant review",
+      "severity": "medium",
+      "detail": "The working capital review is awaiting an updated covenant schedule.",
+      "status": "open",
+      "opened": "2026-06-20"
+    },
+    {
+      "id": "AL-1044",
+      "company": "NTH",
+      "title": "Settlement delay",
+      "severity": "medium",
+      "detail": "A counterparty requested additional time to reconcile its June settlement.",
+      "status": "open",
+      "opened": "2026-06-17"
+    },
+    {
+      "id": "AL-1043",
+      "company": "ORA",
+      "title": "Renewal timing",
+      "severity": "low",
+      "detail": "One renewal shifted into the next reporting period.",
+      "status": "open",
+      "opened": "2026-06-12"
+    },
+    {
+      "id": "AL-1042",
+      "company": "HBR",
+      "title": "Reconciliation variance",
+      "severity": "low",
+      "detail": "An invoice reconciliation is pending supporting documentation.",
+      "status": "open",
+      "opened": "2026-06-09"
+    }
+  ]
+}
