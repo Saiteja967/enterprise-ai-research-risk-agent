@@ -1,0 +1,83 @@
+{
+  "id": "EVAL-5cae6c70807041ad",
+  "at": "2026-11-13T02:40:25.500+00:00",
+  "cases": [
+    {
+      "company": "ABC",
+      "question": "Review overdue receivables aging and distributor settlement dates.",
+      "recall": 1.0,
+      "exact_support": 1.0,
+      "retrieval_ok": true,
+      "matched": 3,
+      "expected": 3,
+      "latency_ms": 37.17
+    },
+    {
+      "company": "ABC",
+      "question": "Review the working capital covenant schedule.",
+      "recall": 1.0,
+      "exact_support": 1.0,
+      "retrieval_ok": true,
+      "matched": 2,
+      "expected": 2,
+      "latency_ms": 18.42
+    },
+    {
+      "company": "KST",
+      "question": "Investigate carrier concentration and backup capacity.",
+      "recall": 1.0,
+      "exact_support": 1.0,
+      "retrieval_ok": true,
+      "matched": 2,
+      "expected": 2,
+      "latency_ms": 17.82
+    },
+    {
+      "company": "VLA",
+      "question": "Investigate inventory holding periods and storage exposure.",
+      "recall": 1.0,
+      "exact_support": 1.0,
+      "retrieval_ok": true,
+      "matched": 2,
+      "expected": 2,
+      "latency_ms": 17.71
+    },
+    {
+      "company": "NTH",
+      "question": "Review settlement reconciliation delays in June.",
+      "recall": 1.0,
+      "exact_support": 1.0,
+      "retrieval_ok": true,
+      "matched": 2,
+      "expected": 2,
+      "latency_ms": 18.09
+    },
+    {
+      "company": "ORA",
+      "question": "Check subscription renewal timing and signature dates.",
+      "recall": 1.0,
+      "exact_support": 1.0,
+      "retrieval_ok": true,
+      "matched": 2,
+      "expected": 2,
+      "latency_ms": 17.42
+    },
+    {
+      "company": "HBR",
+      "question": "Investigate the pending invoice reconciliation variance.",
+      "recall": 1.0,
+      "exact_support": 1.0,
+      "retrieval_ok": true,
+      "matched": 2,
+      "expected": 2,
+      "latency_ms": 17.19
+    }
+  ],
+  "mean_recall": 1.0,
+  "mean_support": 1.0,
+  "retrieval_accuracy": 1.0,
+  "p50_ms": 17.82,
+  "p95_ms": 37.17,
+  "tokens": 0,
+  "cost_usd": 0.0
+}

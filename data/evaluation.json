@@ -1,0 +1,66 @@
+[
+  {
+    "company": "ABC",
+    "question": "Review overdue receivables aging and distributor settlement dates.",
+    "expected": [
+      "DOC-ABC-001",
+      "AL-1048",
+      "SQL-ABC-2026-06"
+    ],
+    "document": "DOC-ABC-001"
+  },
+  {
+    "company": "ABC",
+    "question": "Review the working capital covenant schedule.",
+    "expected": [
+      "DOC-ABC2-001",
+      "AL-1045"
+    ],
+    "document": "DOC-ABC2-001"
+  },
+  {
+    "company": "KST",
+    "question": "Investigate carrier concentration and backup capacity.",
+    "expected": [
+      "DOC-KST-001",
+      "AL-1047"
+    ],
+    "document": "DOC-KST-001"
+  },
+  {
+    "company": "VLA",
+    "question": "Investigate inventory holding periods and storage exposure.",
+    "expected": [
+      "DOC-VLA-001",
+      "AL-1046"
+    ],
+    "document": "DOC-VLA-001"
+  },
+  {
+    "company": "NTH",
+    "question": "Review settlement reconciliation delays in June.",
+    "expected": [
+      "DOC-NTH-001",
+      "AL-1044"
+    ],
+    "document": "DOC-NTH-001"
+  },
+  {
+    "company": "ORA",
+    "question": "Check subscription renewal timing and signature dates.",
+    "expected": [
+      "DOC-ORA-001",
+      "AL-1043"
+    ],
+    "document": "DOC-ORA-001"
+  },
+  {
+    "company": "HBR",
+    "question": "Investigate the pending invoice reconciliation variance.",
+    "expected": [
+      "AL-1042",
+      "SQL-HBR-2026-06"
+    ],
+    "document": null
+  }
+]
