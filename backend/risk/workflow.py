@@ -5,11 +5,12 @@ from time import perf_counter
 from typing import Literal, TypedDict
 
 from langgraph.graph import END, START, StateGraph
+from langsmith import tracing_context
 
 from . import provider, tools
 from .config import mode
 from .db import now, uid
-from .models import Evidence, Finding, Report, ResearchRequest, Trace, Usage
+from .models import Evidence, Finding, Report, ResearchRequest, RiskFactor, Trace, Usage
 
 
 class State(TypedDict, total=False):
@@ -157,7 +158,25 @@ def publish(state: State) -> dict:
             ms=elapsed(start),
         )
     ]
+    sources = state["sources"]
+    factors = []
+    for source in sources:
+        if source.kind == "alert":
+            severity = source.body.partition(" ")[0].lower()
+            factors.append(
+                RiskFactor.model_validate(
+                    {"title": source.title, "severity": severity, "citation": source.id}
+                )
+            )
+    ledger = next((source for source in sources if source.kind == "ledger"), None)
+    summary = f"{ledger.body} [{ledger.id}]" if ledger else "No period comparison was available."
+    if factors:
+        summary += (
+            f" The open register includes {factors[0].title.lower()} [{factors[0].citation}]."
+        )
     report = Report(
+        summary=summary,
+        risk_factors=factors,
         id=uid("RUN"),
         at=now(),
         company=req.company,
@@ -170,7 +189,7 @@ def publish(state: State) -> dict:
         findings=state["findings"],
         sources=state["sources"],
         recommendations=state["recommendations"],
-        confidence="Limited evidence" if issues else "Corroborated by ledger and documents",
+        confidence="Limited evidence" if issues else "Ledger and document evidence available",
         uncertainties=issues
         + ["Evidence is limited to the synthetic reporting period. Future outcomes are unknown."],
         steps=steps,
@@ -196,14 +215,15 @@ graph = builder.compile()
 
 
 async def investigate(request: ResearchRequest, *, simulation: bool = False) -> Report:
-    result = await graph.ainvoke(
-        {
-            "request": request,
-            "sources": [],
-            "steps": [],
-            "issues": [],
-            "start": perf_counter(),
-            "agent_mode": "demo" if simulation else mode(),
-        }
-    )
+    with tracing_context(enabled=False):
+        result = await graph.ainvoke(
+            {
+                "request": request,
+                "sources": [],
+                "steps": [],
+                "issues": [],
+                "start": perf_counter(),
+                "agent_mode": "demo" if simulation else mode(),
+            }
+        )
     return result["report"]

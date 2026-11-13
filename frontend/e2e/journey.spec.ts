@@ -21,6 +21,8 @@ test("research, inspect a citation, approve a change and measure the suite", asy
   await expect(page.locator(".source-box")).toContainText("Receivables aging");
   await page.getByRole("button", { name: "Inspect workflow" }).click();
   await expect(page.getByText("mcp / retrieve_evidence")).toBeVisible();
+  if (process.env.CAPTURE_SHOTS)
+    await page.screenshot({ path: path.resolve("../docs/workflow.png") });
   await page.getByRole("link", { name: "Knowledge base" }).click();
   await page
     .getByLabel("Document · up to 2 MiB")

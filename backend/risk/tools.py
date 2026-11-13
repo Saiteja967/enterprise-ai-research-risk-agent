@@ -9,9 +9,9 @@ from mcp.types import ToolAnnotations
 from pydantic import Field, TypeAdapter
 
 from .analytics import ledger_evidence
-from .db import database
 from .indexing import search
 from .models import CompanyId, Evidence
+from .read_session import research_connection
 
 mcp = FastMCP("Meridian research", log_level="WARNING")
 readonly = ToolAnnotations(readOnlyHint=True, destructiveHint=False, openWorldHint=False)
@@ -20,7 +20,7 @@ readonly = ToolAnnotations(readOnlyHint=True, destructiveHint=False, openWorldHi
 @mcp.tool(annotations=readonly)
 def risk_snapshot(company: CompanyId) -> list[Evidence]:
     """Read two period totals and open risk alerts for one synthetic company."""
-    with database().connect() as conn:
+    with research_connection() as conn:
         return ledger_evidence(conn, company)
 
 
@@ -29,7 +29,7 @@ def retrieve_evidence(
     company: CompanyId, question: Annotated[str, Field(min_length=1, max_length=600)]
 ) -> list[Evidence]:
     """Find up to three relevant approved passages for one company."""
-    with database().connect() as conn:
+    with research_connection() as conn:
         return search(conn, company, question)
 
 

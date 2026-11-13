@@ -1,0 +1,50 @@
+{
+  "evaluation": "EVAL-600d6753b15841c8",
+  "ragas_version": "0.4.3",
+  "cases": [
+    {
+      "company": "ABC",
+      "question": "Review overdue receivables aging and distributor settlement dates.",
+      "recall": 1.0,
+      "precision": 0.6
+    },
+    {
+      "company": "ABC",
+      "question": "Review the working capital covenant schedule.",
+      "recall": 1.0,
+      "precision": 0.4
+    },
+    {
+      "company": "KST",
+      "question": "Investigate carrier concentration and backup capacity.",
+      "recall": 1.0,
+      "precision": 0.6666666666666666
+    },
+    {
+      "company": "VLA",
+      "question": "Investigate inventory holding periods and storage exposure.",
+      "recall": 1.0,
+      "precision": 0.6666666666666666
+    },
+    {
+      "company": "NTH",
+      "question": "Review settlement reconciliation delays in June.",
+      "recall": 1.0,
+      "precision": 0.6666666666666666
+    },
+    {
+      "company": "ORA",
+      "question": "Check subscription renewal timing and signature dates.",
+      "recall": 1.0,
+      "precision": 0.6666666666666666
+    },
+    {
+      "company": "HBR",
+      "question": "Investigate the pending invoice reconciliation variance.",
+      "recall": 1.0,
+      "precision": 1.0
+    }
+  ],
+  "mean_context_recall": 1.0,
+  "mean_context_precision": 0.6666666666666666
+}

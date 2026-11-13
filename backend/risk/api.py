@@ -30,12 +30,19 @@ async def boundary(request: Request, call_next):
     request.state.request_id = uuid4().hex
     start = perf_counter()
     origin = request.headers.get("origin")
-    foreign = origin and urlsplit(origin).netloc != request.headers.get("host")
+    try:
+        foreign = origin and (
+            urlsplit(origin).netloc != request.headers.get("host")
+            or urlsplit(origin).scheme != request.url.scheme
+        )
+    except ValueError:
+        foreign = True
     if request.method not in {"GET", "HEAD", "OPTIONS"} and (
         foreign or request.headers.get("x-meridian-action") != "analyst"
     ):
-        return JSONResponse({"detail": "Same-origin analyst action required."}, status_code=403)
-    response = await call_next(request)
+        response = JSONResponse({"detail": "Same-origin analyst action required."}, status_code=403)
+    else:
+        response = await call_next(request)
     response.headers["X-Request-ID"] = request.state.request_id
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["Referrer-Policy"] = "no-referrer"
@@ -93,6 +100,20 @@ async def create_report(body: ResearchRequest, request: Request):
             )
         )
         record(conn, "report.created", report.id, request.state.request_id)
+    log.info(
+        json.dumps(
+            {
+                "event": "research.completed",
+                "request_id": request.state.request_id,
+                "report_id": report.id,
+                "mode": report.mode,
+                "model": report.model,
+                "status": report.status,
+                "latency_ms": report.latency_ms,
+                **report.usage.model_dump(),
+            }
+        )
+    )
     return report
 
 

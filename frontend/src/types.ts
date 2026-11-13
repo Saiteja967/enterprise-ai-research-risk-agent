@@ -49,6 +49,8 @@ export interface Report {
   mode: string;
   model: string;
   status: string;
+  summary: string;
+  risk_factors: { title: string; severity: string; citation: string }[];
   findings: { citation: string; text: string }[];
   sources: Evidence[];
   recommendations: string[];

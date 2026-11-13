@@ -31,7 +31,12 @@ def charge(tokens: int, variable: str) -> float | None:
 
 
 async def live_select(question: str, sources: list[Evidence]) -> tuple[Selection, Usage]:
-    model = ChatOpenAI(model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"), timeout=10, max_retries=0)
+    model = ChatOpenAI(
+        model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"),
+        timeout=10,
+        max_retries=0,
+        max_completion_tokens=400,
+    )
     classifier = model.with_structured_output(
         Selection, method="json_schema", strict=True, include_raw=True
     )

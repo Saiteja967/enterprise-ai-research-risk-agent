@@ -1,0 +1,14 @@
+**
+!frontend/
+!frontend/**
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+!backend/
+!backend/**
+**/__pycache__/
+!data/
+!data/**
+!alembic.ini
+!infrastructure/
+!infrastructure/Dockerfile

@@ -4,6 +4,7 @@ import math
 import statistics
 import tempfile
 
+from pydantic import Field
 from sqlalchemy import create_engine
 
 from .bootstrap import seed_records
@@ -17,6 +18,8 @@ from .workflow import investigate
 class Case(Model):
     company: str
     question: str
+    retrieved_ids: list[str] = Field(default_factory=list)
+    cited_ids: list[str] = Field(default_factory=list)
     recall: float
     exact_support: float
     retrieval_ok: bool
@@ -69,6 +72,8 @@ async def evaluate() -> Evaluation:
                         Case(
                             company=row["company"],
                             question=row["question"],
+                            retrieved_ids=list(bodies),
+                            cited_ids=sorted(cited),
                             recall=hit / len(expected),
                             exact_support=support,
                             retrieval_ok=row["document"] in docs if row["document"] else not docs,

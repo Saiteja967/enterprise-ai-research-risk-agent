@@ -46,6 +46,12 @@ class Finding(Model):
     text: str
 
 
+class RiskFactor(Model):
+    title: str
+    severity: Severity
+    citation: str
+
+
 class Trace(Model):
     node: str
     status: Literal["ok", "warning", "error"]
@@ -76,6 +82,8 @@ class Report(Model):
     model: str
     status: Literal["complete", "partial", "failed"]
     findings: list[Finding]
+    summary: str = ""
+    risk_factors: list[RiskFactor] = Field(default_factory=list)
     sources: list[Evidence]
     recommendations: list[str]
     confidence: str

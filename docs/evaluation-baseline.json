@@ -1,83 +1,157 @@
 {
-  "id": "EVAL-5cae6c70807041ad",
-  "at": "2026-11-13T02:40:25.500+00:00",
+  "id": "EVAL-600d6753b15841c8",
+  "at": "2026-11-13T02:54:33.427+00:00",
   "cases": [
     {
       "company": "ABC",
       "question": "Review overdue receivables aging and distributor settlement dates.",
+      "retrieved_ids": [
+        "SQL-ABC-2026-06",
+        "AL-1048",
+        "AL-1045",
+        "DOC-ABC-001",
+        "DOC-ABC2-001"
+      ],
+      "cited_ids": [
+        "AL-1045",
+        "AL-1048",
+        "DOC-ABC-001",
+        "SQL-ABC-2026-06"
+      ],
       "recall": 1.0,
       "exact_support": 1.0,
       "retrieval_ok": true,
       "matched": 3,
       "expected": 3,
-      "latency_ms": 37.17
+      "latency_ms": 36.29
     },
     {
       "company": "ABC",
       "question": "Review the working capital covenant schedule.",
+      "retrieved_ids": [
+        "SQL-ABC-2026-06",
+        "AL-1048",
+        "AL-1045",
+        "DOC-ABC2-001",
+        "DOC-ABC-001"
+      ],
+      "cited_ids": [
+        "AL-1045",
+        "DOC-ABC-001",
+        "DOC-ABC2-001",
+        "SQL-ABC-2026-06"
+      ],
       "recall": 1.0,
       "exact_support": 1.0,
       "retrieval_ok": true,
       "matched": 2,
       "expected": 2,
-      "latency_ms": 18.42
+      "latency_ms": 19.68
     },
     {
       "company": "KST",
       "question": "Investigate carrier concentration and backup capacity.",
+      "retrieved_ids": [
+        "SQL-KST-2026-06",
+        "AL-1047",
+        "DOC-KST-001"
+      ],
+      "cited_ids": [
+        "AL-1047",
+        "DOC-KST-001",
+        "SQL-KST-2026-06"
+      ],
       "recall": 1.0,
       "exact_support": 1.0,
       "retrieval_ok": true,
       "matched": 2,
       "expected": 2,
-      "latency_ms": 17.82
+      "latency_ms": 18.66
     },
     {
       "company": "VLA",
       "question": "Investigate inventory holding periods and storage exposure.",
+      "retrieved_ids": [
+        "SQL-VLA-2026-06",
+        "AL-1046",
+        "DOC-VLA-001"
+      ],
+      "cited_ids": [
+        "AL-1046",
+        "DOC-VLA-001",
+        "SQL-VLA-2026-06"
+      ],
       "recall": 1.0,
       "exact_support": 1.0,
       "retrieval_ok": true,
       "matched": 2,
       "expected": 2,
-      "latency_ms": 17.71
+      "latency_ms": 19.28
     },
     {
       "company": "NTH",
       "question": "Review settlement reconciliation delays in June.",
+      "retrieved_ids": [
+        "SQL-NTH-2026-06",
+        "AL-1044",
+        "DOC-NTH-001"
+      ],
+      "cited_ids": [
+        "AL-1044",
+        "DOC-NTH-001",
+        "SQL-NTH-2026-06"
+      ],
       "recall": 1.0,
       "exact_support": 1.0,
       "retrieval_ok": true,
       "matched": 2,
       "expected": 2,
-      "latency_ms": 18.09
+      "latency_ms": 19.76
     },
     {
       "company": "ORA",
       "question": "Check subscription renewal timing and signature dates.",
+      "retrieved_ids": [
+        "SQL-ORA-2026-06",
+        "AL-1043",
+        "DOC-ORA-001"
+      ],
+      "cited_ids": [
+        "AL-1043",
+        "DOC-ORA-001",
+        "SQL-ORA-2026-06"
+      ],
       "recall": 1.0,
       "exact_support": 1.0,
       "retrieval_ok": true,
       "matched": 2,
       "expected": 2,
-      "latency_ms": 17.42
+      "latency_ms": 18.74
     },
     {
       "company": "HBR",
       "question": "Investigate the pending invoice reconciliation variance.",
+      "retrieved_ids": [
+        "SQL-HBR-2026-06",
+        "AL-1042"
+      ],
+      "cited_ids": [
+        "AL-1042",
+        "SQL-HBR-2026-06"
+      ],
       "recall": 1.0,
       "exact_support": 1.0,
       "retrieval_ok": true,
       "matched": 2,
       "expected": 2,
-      "latency_ms": 17.19
+      "latency_ms": 18.62
     }
   ],
   "mean_recall": 1.0,
   "mean_support": 1.0,
   "retrieval_accuracy": 1.0,
-  "p50_ms": 17.82,
-  "p95_ms": 37.17,
+  "p50_ms": 19.28,
+  "p95_ms": 36.29,
   "tokens": 0,
   "cost_usd": 0.0
 }

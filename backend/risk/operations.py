@@ -1,7 +1,7 @@
 from typing import Annotated
 
 from fastapi import APIRouter, Form, HTTPException, Request, UploadFile
-from sqlalchemy import func, select
+from sqlalchemy import case, func, select
 from sqlalchemy.exc import IntegrityError
 from starlette.concurrency import run_in_threadpool
 
@@ -106,7 +106,13 @@ def queue():
         return [
             proposal(r)
             for r in conn.execute(
-                select(approvals).order_by(approvals.c.at.desc(), approvals.c.id.desc()).limit(200)
+                select(approvals)
+                .order_by(
+                    case((approvals.c.status == "pending", 0), else_=1),
+                    approvals.c.at.desc(),
+                    approvals.c.id.desc(),
+                )
+                .limit(200)
             ).mappings()
         ]
 

@@ -27,6 +27,19 @@ def embed(text: str) -> list[float]:
     return [x / norm for x in vector]
 
 
+def query_embedding(question: str, company: str) -> list[float]:
+    """Add a general credit-review vocabulary to broad company overview requests."""
+    generic = set(
+        "analyze analyse company summarize summarise overview report research risk risks signal signals changes key follow up actions recommend recommendations identify and the of for on a an provide give me".split()
+    )
+    specific = set(re.findall(r"[a-z0-9]+", question.lower())) - generic - {company.lower()}
+    if not specific:
+        return embed(
+            "credit review receivables working capital carrier concentration inventory settlement reconciliation renewal"
+        )
+    return embed(question)
+
+
 def add_document(
     conn: Connection,
     doc_id: str,
@@ -58,7 +71,7 @@ def add_document(
 
 
 def search(conn: Connection, company: str, question: str) -> list[Evidence]:
-    vector = embed(question)
+    vector = query_embedding(question, company)
     stmt = (
         select(chunks.c.id, documents.c.title, chunks.c.locator, chunks.c.body)
         .join(documents)

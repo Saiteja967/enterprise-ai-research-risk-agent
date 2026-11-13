@@ -122,6 +122,31 @@ export function Research({
               </span>
               <span>{report.confidence}</span>
             </div>
+            {report.summary && (
+              <>
+                <h3>Period summary</h3>
+                <p>{report.summary}</p>
+              </>
+            )}
+            {report.risk_factors.length > 0 && (
+              <>
+                <h3>Risk factors</h3>
+                <ul>
+                  {report.risk_factors.map((f) => (
+                    <li key={f.citation}>
+                      <b>{f.title}</b> · {f.severity} severity{" "}
+                      <button
+                        className="citation"
+                        aria-label={"Inspect risk source " + f.citation}
+                        onClick={() => setSource(f.citation)}
+                      >
+                        {f.citation}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
             <h3>Findings</h3>
             {report.findings.map((f) => (
               <div className="finding" key={f.citation}>
