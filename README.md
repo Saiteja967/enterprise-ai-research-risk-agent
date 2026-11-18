@@ -1,5 +1,7 @@
 # Enterprise AI Research & Risk Intelligence Agent
 
+[Portfolio case study](https://saiteja-meridian-portfolio.keenaspen8192.chatgpt.site) · [Verified GitHub Actions run](https://github.com/Saiteja967/enterprise-ai-research-risk-agent/actions/runs/44368014843)
+
 **Meridian** is a local analyst console for investigating changes in a synthetic credit portfolio. In the June fixture, ABC’s overdue receivables rise from **$139,742 to $161,455**. An analyst can trace those amounts to the ledger, inspect a credit memo about two distributors, and request a review with a recorded human decision.
 
 This independent portfolio project uses six fictional companies, 72 transaction records, seven risk alerts and six seeded documents. All amounts and observations are synthetic. Demo mode runs the actual graph, SQL queries, document search, approval transactions and evaluation suite without API credentials.
@@ -132,7 +134,7 @@ Copy `.env.example` to `.env`, set `AGENT_MODE=live`, `OPENAI_MODEL` and `OPENAI
 - **Changes.** The graph has two read tools. Storage mutations require explicit user actions. Uploads stage extracted text; only approval indexes it. The application atomically persists decisions, effects and audit events. A unique digest per company guards against duplicate documents. Report/evaluation creation and staging are explicit save operations.
 - **Untrusted material.** Both upload formats have file, text and parsing limits. A disposable parser process has a deadline and CPU limits, plus a Linux memory cap. Common instruction overrides are rejected. Unknown model references cannot create SQL, select another company's data or authorize a change. Text screening cannot establish a document’s truth or catch every instruction.
 - **Scale and quality.** Hashing is reproducible offline and inexpensive. Synonyms, contradictions, stale sources and ambiguous intent need a richer corpus and human adjudication. A production pilot would benchmark learned embeddings and hybrid search against labeled analyst queries, add OCR with isolation, separate database roles, and introduce durable jobs before increasing concurrency.
-- **Deployment limits.** The local PostgreSQL integration used PostgreSQL 16.2 and pgvector 0.6.2. Compose targets PostgreSQL 17. The Docker engine was unavailable on the development host. The CI definition tests Compose on Linux; an actual hosted Actions run and paid provider integration remain unverified.
+- **Deployment limits.** The local PostgreSQL integration used PostgreSQL 16.2 and pgvector 0.6.2. The first hosted GitHub Actions run passed on November 18, 2026: backend checks against PostgreSQL 17/pgvector, both browser journeys, and the Docker Compose build/startup/health check. The public portfolio is a static case study; the analyst application remains a local single-user demo. Paid-provider integration remains unverified.
 
 ## Verification and project map
 
